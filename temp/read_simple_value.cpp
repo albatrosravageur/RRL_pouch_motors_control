@@ -23,7 +23,7 @@
 #define U_MILSE 9
 #define U_MILRU 10
 
-AMS_AS5048B mysensor(0x40);
+AMS_AS5048B mysensor(0x44);
 
 void setup() {
 
@@ -45,11 +45,11 @@ void setup() {
 void loop() {
 	//print to serial the raw angle and degree angle every 2 seconds
 	//print 2 times the exact same angle - only one measurement
-	Serial.print("Angle sensor raw : ");
-	Serial.println(mysensor.angleR(U_RAW, true), DEC);
+	//Serial.print("Angle sensor raw : ");
+    //Serial.println(mysensor.angleR(U_RAW, true), DEC);
 
 	Serial.print("Angle degree : ");
-	Serial.println(mysensor.angleR(U_DEG, false), DEC);
+	Serial.println(mysensor.angleR(U_DEG, true), DEC);
 
-	delay(2000);
+	delay(200);
 }
