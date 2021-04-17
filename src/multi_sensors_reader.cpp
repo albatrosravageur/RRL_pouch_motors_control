@@ -37,7 +37,7 @@
 // Choose performance estimation of not
 //#define performance
 
-AMS_AS5048B sensors[NUM_SENSORS]; // = {AMS_AS5048B(0x40), AMS_AS5048B(0x48), AMS_AS5048B(0xBE), AMS_AS5048B(0xC8)};
+AMS_AS5048B sensors[NUM_SENSORS] = {AMS_AS5048B(0x44), AMS_AS5048B(0x50);//, AMS_AS5048B(0xBE), AMS_AS5048B(0xC8)};
 double angles[NUM_SENSORS];
 unsigned long time = 0;
 
@@ -80,7 +80,7 @@ void setup()
     while (!Serial)
         ; //wait until Serial ready
 
-    I2C_scanner(); //find the devices
+    //I2C_scanner(); //find the devices
 
     for (int i = 0; i < NUM_SENSORS; i++)
     {
